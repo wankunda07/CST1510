@@ -23,20 +23,22 @@ label = ""      # replace with an input() call
 value = 0.0     # replace with an input() call, converted with float()
 limit = 0.0     # replace with an input() call, converted with float()
 
+label = input("Enter the label: ")
+value = float(input("Enter the value: "))
+limit = float(input("Enter the limit: "))
 
 # ================================================================== PROCESS
 # 2. Work out the difference and the percentage.       [Typical and above]
 
-difference = 0.0   # replace with your calculation
-percent = 0.0       # replace with your calculation
+difference = value - limit
+percent = (value / limit) * 100
 # 3. Decide a status and store it in a variable called status.
-#
-#    Threshold : if / else        -> "OVER LIMIT" or "OK"
-#    Typical   : if / elif / else -> "OVER LIMIT" (100% or more),
-#                                     "WARNING" (90% or more), otherwise "OK"
-
-status = ""   # replace with your if / else (or if / elif / else)
-
+ if percent >= 100:
+      status = "OVER LIMIT"
+ elif percent >= 90:
+      status = "WARNING"
+ else:
+      status = "OK"
 
 # =================================================================== OUTPUT
 # 4. Print the report.
@@ -52,8 +54,12 @@ print()
 print("=" * 34)
 print(f"  RECORD CHECK  -  {label}")
 print("=" * 34)
-
-# your report lines go here
+print(f"Label       :  {label}")
+print(f"Value       :  {value:.2f}")
+print(f"Limit       :  {limit:.2f}")
+print(f"Difference  :  {difference:.2f}")
+print(F"Percent     :  {percent:.2f}%")
+print(f"Status      :  {status}")
 
 print("=" * 34)
 
