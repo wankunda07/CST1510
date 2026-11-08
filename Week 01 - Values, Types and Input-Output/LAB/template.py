@@ -21,10 +21,9 @@ Delete these instructions as you replace them with your code.
 #
 #    Remember: input() always gives back text.
 
-label = ""      # : replace with an input() call
-first = 0.0     # : replace with an input() call, converted
-second = 0.0    # : replace with an input() call, converted
-
+label = input("Enter source IP: ")
+first = float(input("Enter failed logins: ")
+second = float(input("Enter total attempts: ")
 
 # ================================================================== PROCESS
 # 2. Work out what you were NOT given.       [Typical and above]
@@ -34,10 +33,10 @@ second = 0.0    # : replace with an input() call, converted
 #
 #    Do not type the answers. Calculate them.
 
-difference = 0.0   # 
-percent = 0.0      # 
+difference = second - first 
+percent = (first / second) * 100
 
-
+successful_percentage = (difference / second) * 100
 # =================================================================== OUTPUT
 # 3. Print the report.
 #
@@ -53,10 +52,13 @@ print("=" * 34)
 print(f"  RECORD CHECK  -  {label}")
 print("=" * 34)
 
-# : your report lines go here
+print(f"{'Failed logins':<18}: {first:>10.2f}")
+print(f"{'Total attempts':<18}: {second:>10.2f}")
+print(f"{'Successful logins':<18}: {difference:>+10.2f}")
+print(f"{'Failed login %':<18}: {percent:>10.2f} %")
+print(f"{'Sucessful login %':<18}: {successful_percentage:>10.2f} %)
 
 print("=" * 34)
-
 
 # ==========================================================================
 # 4. Before you finish:
